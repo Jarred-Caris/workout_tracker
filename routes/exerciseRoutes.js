@@ -2,6 +2,7 @@ const router = require("express").Router();
 const path = require('path')
 const exerciseRoutes = require("./exerciseRoutes.js");
 
+// as per video
 // get, put, post /api/workouts
 // get /api/workouts/range
 

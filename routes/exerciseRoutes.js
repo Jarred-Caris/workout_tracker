@@ -33,36 +33,42 @@ router.get("/stats", async (req, res) => {
 });
 
 router.get("/workouts", (req, res) => {
-  Workout.find({})
-      .then(workouts => {
-          res.json(workouts);
-      })
-      .catch(err => {
-          res.status(400).json(err);
-      });
+  Workout.aggregate([
+    {
+      $addFields: {
+        totalDuration: { $sum: "$exercises.duration" },
+      },
+    },
+  ])
+    .then((workouts) => {
+      res.json(workouts);
+    })
+    .catch((err) => {
+      res.status(400).json(err);
+    });
 });
 
 router.post("/workouts", ({ body }, res) => {
   Workout.create(body)
-      .then(workouts => {
-          res.json(workouts);
-      })
-      .catch(err => {
-          res.status(400).json(err);
-      });
+    .then((workouts) => {
+      res.json(workouts);
+    })
+    .catch((err) => {
+      res.status(400).json(err);
+    });
 });
-
 
 router.put("/workouts/:id", (req, res) => {
   Workout.findById(req.params.id)
-      .then(workout => {
-          workout.exercises.push(req.body);
-          Workout.updateOne({ _id: req.params.id }, workout, (err, result) => {
-              res.json(workout);
-          })
-      })
-      .catch(err => {
-          res.status(400).json(err);
+    .then((workout) => {
+      workout.exercises.push(req.body);
+      Workout.updateOne({ _id: req.params.id }, workout, (err, result) => {
+        res.json(workout);
       });
+    })
+    .catch((err) => {
+      res.status(400).json(err);
+    });
 });
+
 module.exports = router;

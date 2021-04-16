@@ -49,7 +49,7 @@ If you have fursther questions, you can reach me at
 or
 jarred.caris@gmail.com
 
-[click for heroku domain] (https://dashboard.heroku.com/apps/aqueous-reef-40105/deploy/heroku-git)
+[click for heroku domain] (https://aqueous-eyrie-42311.herokuapp.com/?id=6078ed5c844cdf001587bc19)
 
 
-[click for URL] (https://jarred-caris.github.io/Tech_blog/)
+[click for URL] (https://github.com/Jarred-Caris/workout_tracker)

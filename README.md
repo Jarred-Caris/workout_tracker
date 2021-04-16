@@ -52,4 +52,4 @@ jarred.caris@gmail.com
 [click for heroku domain] (https://aqueous-eyrie-42311.herokuapp.com/?id=6078ed5c844cdf001587bc19)
 
 
-[click for URL] (https://github.com/Jarred-Caris/workout_tracker)
+[click for github repo] (https://github.com/Jarred-Caris/workout_tracker)
